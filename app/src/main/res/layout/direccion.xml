@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rel"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="308dp"
+        android:layout_height="207dp"
+        android:background="@drawable/roundialog"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tipo25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:text="DIRECCION DE ENVIO"
+            android:textAllCaps="true"
+            android:textColor="#ff000000"
+            android:textSize="28sp" />
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/check58"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="142dp"
+            android:layout_marginEnd="124dp"
+            android:src="@drawable/check" />
+
+        <TextView
+            android:id="@+id/direccion"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="99dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

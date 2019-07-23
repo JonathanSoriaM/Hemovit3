@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="308dp"
+        android:layout_height="207dp"
+        android:background="@drawable/roundialog"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="256dp"
+            android:layout_height="125dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="395dp"
+            app:srcCompat="@drawable/newlogo" />
+
+        <TextView
+            android:id="@+id/tipo97"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="69dp"
+            android:text="AGRADECE SU VISITA"
+            android:textAllCaps="true"
+            android:textColor="#ff000000"
+            android:textSize="28sp" />
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/check46"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="142dp"
+            android:layout_marginEnd="124dp"
+            android:src="@drawable/check" />
+    </RelativeLayout>
+</RelativeLayout>

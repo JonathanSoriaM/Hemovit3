@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="395dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:srcCompat="@drawable/newlogo"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="39dp"
+        android:fontFamily="@font/oswald"
+        android:gravity="center"
+        android:text="REGISTRATE"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/roundtext"
+        android:gravity="center"
+        android:hint="Nombre"
+        app:layout_constraintBottom_toTopOf="@+id/whats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/whats"
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/roundtext"
+        android:gravity="center"
+        android:hint="Email"
+        app:layout_constraintBottom_toTopOf="@+id/contraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <EditText
+        android:id="@+id/contraseña"
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/roundtext"
+        android:gravity="center"
+        android:hint="Contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/clinica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whats" />
+
+    <EditText
+        android:id="@+id/clinica"
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/roundtext"
+        android:gravity="center"
+        android:hint="Hospital/Clinica"
+        app:layout_constraintBottom_toTopOf="@+id/cedula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+
+    <EditText
+        android:id="@+id/cedula"
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/roundtext"
+        android:gravity="center"
+        android:hint="Cedula"
+        app:layout_constraintBottom_toTopOf="@+id/registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clinica" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:backgroundTint="#4CAF50"
+        android:clickable="true"
+        android:tint="#ECEAEA"
+        app:backgroundTint="#4CAF50"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cedula"
+        app:srcCompat="@drawable/ic_check_black_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

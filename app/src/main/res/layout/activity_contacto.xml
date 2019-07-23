@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    tools:context=".Contacto"
+    android:background="#ffff">
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/buttonmap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        mapbox:srcCompat="@drawable/locbut" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/newlogo" />
+
+    <ImageButton
+        android:id="@+id/telefono"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="41dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/whats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/telefono"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="41dp" />
+
+    <ImageButton
+        android:id="@+id/correo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="246dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/correo"
+        android:layout_marginLeft="246dp" />
+
+    <ImageButton
+        android:id="@+id/whats"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="41dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/correo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/mensaje"
+        android:layout_marginLeft="155dp"
+        android:layout_marginRight="41dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_semibold"
+        android:gravity="center"
+        android:text="Servicio 24/7"
+        android:textAllCaps="true"
+        android:textColor="#ff000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="298dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefono"
+        app:layout_constraintVertical_bias="1.0"
+        mapbox:mapbox_cameraTargetLat="19.706768"
+        mapbox:mapbox_cameraTargetLng="-101.190965"
+        mapbox:mapbox_cameraZoom="13">
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

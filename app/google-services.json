@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "978968346819",
+    "firebase_url": "https://emobit-e7165.firebaseio.com",
+    "project_id": "emobit-e7165",
+    "storage_bucket": "emobit-e7165.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978968346819:android:10f612f88cc9d248",
+        "android_client_info": {
+          "package_name": "com.hemovi.adrian.hemovit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978968346819-c6jurmsvv9ffkn70f4bk65fls9q9lbb7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hemovi.adrian.hemovit",
+            "certificate_hash": "d1fe68ce468ed552f2854d70f3e6f4064bbf305d"
+          }
+        },
+        {
+          "client_id": "978968346819-v8v2g2ijpm1sa3lu5m6nub1nkfv64tha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7cHbD49Cgr7ULM-LDblDQuTG-M9tN8u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978968346819-v8v2g2ijpm1sa3lu5m6nub1nkfv64tha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978968346819:android:a1df6ad34f9d365d",
+        "android_client_info": {
+          "package_name": "com.jonathan.Hemovit3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978968346819-v8v2g2ijpm1sa3lu5m6nub1nkfv64tha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7cHbD49Cgr7ULM-LDblDQuTG-M9tN8u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978968346819-v8v2g2ijpm1sa3lu5m6nub1nkfv64tha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978968346819:android:ed3a9070bdd72370",
+        "android_client_info": {
+          "package_name": "hemoapp.adrian.hemovit.com.hemovit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978968346819-rqpn8d2po98m5eved33q0s9f9vu660al.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hemoapp.adrian.hemovit.com.hemovit",
+            "certificate_hash": "38905f368aac9a18dd4b17625a62dc91133ee5ad"
+          }
+        },
+        {
+          "client_id": "978968346819-v8v2g2ijpm1sa3lu5m6nub1nkfv64tha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7cHbD49Cgr7ULM-LDblDQuTG-M9tN8u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978968346819-v8v2g2ijpm1sa3lu5m6nub1nkfv64tha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

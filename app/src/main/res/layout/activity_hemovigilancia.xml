@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Hemovigilancia"
+    android:background="#ffff">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/bloodbag" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:gravity="center"
+        android:text="¿Hubo problemas en la transfusión?"
+        android:textColor="#ff000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/open_sans_light"
+        android:gravity="center"
+        android:text="En Hemovit nos interesa saber si las unidades que adquiriste fueron de excelente calidad y si el proceso de transfusión fue exitoso."
+        android:textColor="#ff000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/scan_format"
+        android:layout_width="263dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/roundhemot"
+        android:fontFamily="@font/open_sans_light"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="CODIGO DE UNIDAD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <ImageButton
+        android:id="@+id/scan_button"
+        android:layout_width="263dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/roundhemob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scan_format"
+        app:srcCompat="@drawable/ic_camera_alt_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/good"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="260dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scan_button"
+        app:srcCompat="@drawable/feliz" />
+
+    <ImageButton
+        android:id="@+id/regular"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/good"
+        app:layout_constraintTop_toBottomOf="@+id/scan_button"
+        app:srcCompat="@drawable/triste" />
+
+    <ImageButton
+        android:id="@+id/bad"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="49dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/regular"
+        app:layout_constraintTop_toBottomOf="@+id/scan_button"
+        app:srcCompat="@drawable/enojado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

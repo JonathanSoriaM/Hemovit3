@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rel"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="308dp"
+        android:layout_height="207dp"
+        android:background="@drawable/roundialog"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tipo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginBottom="94dp"
+            android:text="¿CONFIRMAR PEDIDO?"
+            android:textAllCaps="true"
+            android:textColor="#ff000000"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tipo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="68dp"
+            android:text="Se HAN AGREGADO"
+            android:textAllCaps="true"
+            android:textColor="#ff000000"
+            android:textSize="20sp" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/check68"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="134dp"
+            android:layout_marginEnd="63dp"
+            android:src="@drawable/check" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tacha78"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="134dp"
+            android:layout_marginEnd="200dp"
+            android:src="@drawable/rechazado" />
+
+        <TextView
+            android:id="@+id/caja5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="89dp"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</RelativeLayout>
