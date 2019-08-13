@@ -2,8 +2,6 @@ package com.jonathan.Hemovit3;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -12,17 +10,16 @@ import android.view.View;
 import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,6 +28,14 @@ import java.util.Locale;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 // para la localizacion
 /*import android.content.Intent;
@@ -48,6 +53,9 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
     double latitude;
     double longitude;
     String address;
+
+    public Api api;
+
     FirebaseAuth firebaseAuth;
     Map<String, String> params;
 
@@ -107,7 +115,64 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
                 dismiss();
             }
         });
-        check58.setOnClickListener(this);
+
+        check58.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                Gson gson = new GsonBuilder()
+                        .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                        .create();
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("https://d0a45a24.ngrok.io/")
+                        .addConverterFactory(GsonConverterFactory.create(gson))
+                        .build();
+
+                api = retrofit.create(Api.class);
+                if (!direccion .getText().toString().isEmpty()) {
+                    String usuario = mAuth.getCurrentUser().getEmail().toString();
+
+
+                    Map<String, String> com4 = new HashMap<>();
+                    com4.put("correo", usuario);
+
+                    Map<String, String> coment4 = new HashMap<>();
+                    coment4.put("correo", usuario);
+                    coment4.put("direccion",address);
+                    coment4.put("unidades",unidad);
+                    coment4.put("tipo",tipo);
+
+                    Map<String, Object> obj4 = new HashMap<>();
+                    obj4.put("query", com4);
+                    obj4.put("pedido2", coment4);
+
+                    Log.v("clasificacion", String.valueOf(obj4));
+
+                    Call<ResponseBody> newComent = api.Pedidos(obj4);
+                    newComent.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            switch (response.code())
+                            {
+                                case 200:
+                                    Toast.makeText(getApplicationContext(),"Mensaje enviado",Toast.LENGTH_SHORT).show();
+                                    break;
+                                case 201:
+                                    Toast.makeText(getApplicationContext(),"Error en el envio",Toast.LENGTH_SHORT).show();
+                                    break;
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+        });
 
 
 
@@ -117,18 +182,14 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-
-Log.v("usuario",unidad);
-
-
-
         params = new HashMap<>();
         // the POST parameters:
         params.put("direccion",address);
         params.put("usuario",usuario);
         params.put("unidades",unidad);
         params.put("tipo",tipo);
-        RealizarPost( usuario,tipo, address,unidad);
+        //api de firebase
+        //RealizarPost( usuario,tipo, address,unidad);
 
 
         usuario = mAuth.getCurrentUser().getEmail();
@@ -146,8 +207,8 @@ Log.v("usuario",unidad);
 
 
 
-    //comienza el api
-        public void RealizarPost(final String address, final String usuario, final String tipo, final String unidad) {
+    //comienza el api con firebase
+       /* public void RealizarPost(final String address, final String usuario, final String tipo, final String unidad) {
             String url = "http://ec2-52-15-254-137.us-east-2.compute.amazonaws.com:3000/compras";
             StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>() {
@@ -183,7 +244,7 @@ Log.v("usuario",unidad);
             Volley.newRequestQueue(Custom3DialogClass.this.getContext()).add(postRequest);
         }
     //termina el post
-
+*/
 
 
 }
