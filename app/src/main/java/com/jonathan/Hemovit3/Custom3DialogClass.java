@@ -2,6 +2,8 @@ package com.jonathan.Hemovit3;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -15,7 +17,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -42,7 +43,7 @@ import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 import android.content.pm.PackageManager;*/
 //aqui termina
 
-public class Custom3DialogClass extends Dialog implements View.OnClickListener {
+public class Custom3DialogClass extends Dialog {
     CircleImageView check58;
     TextView direccion;
     RelativeLayout relativeLayout;
@@ -131,7 +132,7 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
                         .build();
 
                 api = retrofit.create(Api.class);
-                if (!direccion .getText().toString().isEmpty()) {
+                if (!direccion.getText().toString().isEmpty()) {
                     String usuario = mAuth.getCurrentUser().getEmail().toString();
 
 
@@ -157,10 +158,14 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
                             switch (response.code())
                             {
                                 case 200:
-                                    Toast.makeText(getApplicationContext(),"Mensaje enviado",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Custom3DialogClass.this.getContext(),"Mensaje enviado",Toast.LENGTH_SHORT).show();
+                                    Custom4DialogClass customDialogClass = new Custom4DialogClass(getContext());
+                                    customDialogClass.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                    customDialogClass.show();
+                                    dismiss();
                                     break;
                                 case 201:
-                                    Toast.makeText(getApplicationContext(),"Error en el envio",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Custom3DialogClass.this.getContext(),"Error en el envio",Toast.LENGTH_SHORT).show();
                                     break;
                             }
                         }
@@ -179,7 +184,7 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
 
     }
 
-    @Override
+    /*@Override
     public void onClick(View view) {
 
         params = new HashMap<>();
@@ -203,7 +208,7 @@ public class Custom3DialogClass extends Dialog implements View.OnClickListener {
 
 
 
-    }
+    }*/
 
 
 
