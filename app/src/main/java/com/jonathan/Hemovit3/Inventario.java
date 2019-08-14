@@ -99,7 +99,7 @@ public class Inventario extends AppCompatActivity {
     }
 
     private void loadlist(List<Listado> body) {
-
+        recyclerView = findViewById(R.id.recyclerView);
     }
 
 
