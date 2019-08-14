@@ -107,7 +107,7 @@ public class Registro extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://aa49c45d.ngrok.io/")
+                .baseUrl("https://6df71175.ngrok.io/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

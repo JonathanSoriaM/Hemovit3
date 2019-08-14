@@ -40,4 +40,7 @@ public interface Api {
 
     @GET("inventario")
     Call<List<Listado>> getInventario();
+
+    @GET("inventario")
+    Call<List<Listado>> getInventarioNeg();
 }
