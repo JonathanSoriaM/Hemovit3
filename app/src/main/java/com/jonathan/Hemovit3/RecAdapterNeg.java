@@ -19,7 +19,7 @@ public class RecAdapterNeg extends RecyclerView.Adapter<RecAdapterNeg.ViewHolder
 
     public List<Listado> modeloList;
 
-    public RecAdapterNeg(List<Listado> modeloList, Inventarioneg inventarioneg)
+    public RecAdapterNeg(List<Listado> modeloList,  Context context)
     {
         this.modeloList = modeloList;
         this.context = context;
@@ -53,7 +53,7 @@ public class RecAdapterNeg extends RecyclerView.Adapter<RecAdapterNeg.ViewHolder
 
 
     }
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tipe;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -48,7 +48,7 @@ public class Inventarioneg extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://38b857fa.ngrok.io/")
+                .baseUrl("https://bac8df54.ngrok.io/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

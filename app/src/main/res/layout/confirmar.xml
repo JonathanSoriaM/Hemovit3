@@ -26,7 +26,8 @@
             android:text="¿CONFIRMAR PEDIDO?"
             android:textAllCaps="true"
             android:textColor="#ff000000"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            android:layout_alignParentRight="true" />
 
         <TextView
             android:id="@+id/tipo2"
@@ -39,7 +40,9 @@
             android:text="Se HAN AGREGADO"
             android:textAllCaps="true"
             android:textColor="#ff000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="68dp" />
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -50,7 +53,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="134dp"
             android:layout_marginEnd="63dp"
-            android:src="@drawable/check" />
+            android:src="@drawable/check"
+            android:layout_marginRight="63dp"
+            android:layout_alignParentRight="true" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/tacha78"
@@ -60,16 +65,19 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="134dp"
             android:layout_marginEnd="200dp"
-            android:src="@drawable/rechazado" />
+            android:src="@drawable/rechazado"
+            android:layout_marginRight="200dp"
+            android:layout_alignParentRight="true" />
 
         <TextView
             android:id="@+id/caja5"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="89dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="219dp"
+            android:layout_marginLeft="219dp"
+            android:layout_marginTop="46dp"
             android:textSize="20sp" />
 
     </RelativeLayout>

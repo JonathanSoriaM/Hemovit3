@@ -78,7 +78,7 @@ public class DialogComent extends Dialog {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://38b857fa.ngrok.io/")
+                        .baseUrl("https://bac8df54.ngrok.io/")
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
@@ -109,10 +109,10 @@ public class DialogComent extends Dialog {
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                             switch (response.code()) {
                                 case 200:
-                                    Toast.makeText(getApplicationContext(), "Mensaje enviado", Toast.LENGTH_SHORT).show();
+                                   // Toast.makeText(getApplicationContext(), "Mensaje enviado", Toast.LENGTH_SHORT).show();
                                     break;
                                 case 201:
-                                    Toast.makeText(getApplicationContext(), "Error en el envio", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), "Error en el envio", Toast.LENGTH_SHORT).show();
                                     break;
                             }
                         }
