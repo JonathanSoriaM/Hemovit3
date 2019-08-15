@@ -41,6 +41,6 @@ public interface Api {
     @GET("inventario")
     Call<List<Listado>> getInventario();
 
-    @GET("inventario")
+    @GET("negativos")
     Call<List<Listado>> getInventarioNeg();
 }

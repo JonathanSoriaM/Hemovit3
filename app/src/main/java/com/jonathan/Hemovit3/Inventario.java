@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +32,7 @@ public class Inventario extends AppCompatActivity {
     boolean isLoading = false, isMaxData = false;
     String last_node = "",last_key = "";
     RecyclerView recyclerView;
-    RecAdapter recAdapter;
+    RecAdapterPos adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class Inventario extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://6df71175.ngrok.io/")
+                .baseUrl("https://38b857fa.ngrok.io/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
@@ -99,7 +100,11 @@ public class Inventario extends AppCompatActivity {
     }
 
     private void loadlist(List<Listado> body) {
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.listado);
+        adapter = new RecAdapterPos(body,Inventario.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Inventario.this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
 

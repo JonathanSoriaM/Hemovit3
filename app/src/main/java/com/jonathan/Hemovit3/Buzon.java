@@ -47,7 +47,7 @@ public class Buzon extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://d0a45a24.ngrok.io/")
+                .baseUrl("https://38b857fa.ngrok.io/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

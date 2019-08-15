@@ -1,5 +1,8 @@
 package com.jonathan.Hemovit3;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecAdapterNeg extends RecyclerView.Adapter<RecAdapterNeg.ViewHolder>{
+    public sangreSelected sangreSelected;
+    public Context context;
+
     public List<Listado> modeloList;
 
-    public RecAdapterNeg(List<Listado>modeloList)
+    public RecAdapterNeg(List<Listado> modeloList, Inventarioneg inventarioneg)
     {
         this.modeloList = modeloList;
+        this.context = context;
     }
 
     @NonNull
@@ -29,7 +36,15 @@ public class RecAdapterNeg extends RecyclerView.Adapter<RecAdapterNeg.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull RecAdapterNeg.ViewHolder holder, int position) {
         final Listado lista = modeloList.get(position);
-        holder.tipe.setText(lista.getClasificacion());
+        holder.tipe.setText(lista.getNombre() +" " + lista.getClasificacion());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomDialogClass ventana = new CustomDialogClass(context,lista.getNombre());
+                ventana.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                ventana.show();
+            }
+        });
     }
 
     @Override

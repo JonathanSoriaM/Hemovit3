@@ -23,6 +23,7 @@ public class CustomDialogClass extends Dialog implements View.OnClickListener {
     TextView tipo;
     String unidad;
 
+
     public CustomDialogClass(@NonNull Context context, String unidad) {
         super(context);
         this.unidad = unidad;

@@ -127,7 +127,7 @@ public class Custom3DialogClass extends Dialog {
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://6df71175.ngrok.io/")
+                        .baseUrl("https://38b857fa.ngrok.io/")
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
