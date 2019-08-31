@@ -18,14 +18,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     float x1 , x2, y1 , y2;
+    public Api api;
     public ImageView login;
     public TextView registro;
     EditText email,password;
@@ -42,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
-        pendientes = database.getReference().child("pendientes");
+
         login = (ImageView)findViewById(R.id.login);
         registro = (TextView)findViewById(R.id.registro);
         email = (EditText)findViewById(R.id.whats);
@@ -80,30 +91,51 @@ public class MainActivity extends AppCompatActivity {
                                             FirebaseUser user = mAuth.getCurrentUser();
                                             Log.v("USUARIO", user.getEmail());
                                             final String email = user.getEmail();
-                                            pendientes.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                                            Gson gson = new GsonBuilder()
+                                                    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                                                    .create();
+
+                                            Retrofit retrofit = new Retrofit.Builder()
+                                                    .baseUrl("https://91527622.ngrok.io/")
+                                                    .addConverterFactory(GsonConverterFactory.create(gson))
+                                                    .build();
+
+                                            api = retrofit.create(Api.class);
+
+                                            Map<String,String> com8 = new HashMap<>();
+                                            com8.put("correo",email);
+
+
+
+
+
+                                            Map<String,Object> obj45 = new HashMap<>();
+                                            obj45.put("query",com8);
+
+                                            Call<ResponseBody> newComent = api.verificarUsuario(obj45);
+                                            newComent.enqueue(new Callback<ResponseBody>() {
                                                 @Override
-                                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                    if (dataSnapshot.hasChildren()) {
-                                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                                                            Usuario usuario = dataSnapshot1.getValue(Usuario.class);
-                                                            if (usuario.acceso.equals("no")) {
-                                                                /*Intent intent = new Intent(MainActivity.this, Registro.class);
-                                                                startActivity(intent);*/
-                                                            } else {
-
-                                                                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-                                                                startActivity(intent);
-                                                            }
-                                                        }
+                                                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                                                    switch (response.code())
+                                                    {
+                                                        case 200:
+                                                            Toast.makeText(getApplicationContext(),"Tiene Acceso",Toast.LENGTH_SHORT).show();
+                                                            Intent pasele = new Intent(MainActivity.this,Main2Activity.class);
+                                                            startActivity(pasele);
+                                                            break;
+                                                        case 201:
+                                                            Toast.makeText(getApplicationContext(),"Error en el envio",Toast.LENGTH_SHORT).show();
+                                                            break;
                                                     }
-
                                                 }
 
                                                 @Override
-                                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                                                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                                                    Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
                                                 }
                                             });
+
 
                                         } else {
                                             // If sign in fails, display a message to the user.

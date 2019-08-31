@@ -20,6 +20,12 @@ public interface Api {
     @Headers({
             "Content-Type:application/json"
     })
+    @POST("verificacion")
+    Call<ResponseBody> verificarUsuario(@Body Map<String,Object> versionId);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
 
     @POST("comentarios")
     Call<ResponseBody> MandarComentarios(@Body Map<String,Object> versionId);
