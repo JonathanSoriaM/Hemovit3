@@ -46,7 +46,7 @@ public class Inventario extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://91527622.ngrok.io/")
+                .baseUrl("https://hemo-api.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
